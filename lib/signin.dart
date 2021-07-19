@@ -24,7 +24,7 @@ class _SigninState extends State<Signin> {
               top,
               width: 300,
               height: 250,
-              color: Colors.purple[400],
+              color: Colors.indigo[400],
             ),
           ),
           Container(
@@ -36,10 +36,10 @@ class _SigninState extends State<Signin> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: 180,
+                    height: 120,
                   ),
                   Text(
-                    'Signin',
+                    'Sign in',
                     style: GoogleFonts.josefinSans(
                       fontWeight: FontWeight.bold,
                       fontSize: 50,
@@ -126,7 +126,35 @@ class _SigninState extends State<Signin> {
                             borderSide: BorderSide(color: Colors.blue)),
                       ),
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 70, left: 120, right: 120),
+                    child: Container(
+                      height: 50,
+                      width: 400,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.indigo[400],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                        ),
+                        onPressed: () => {
+                          if (_formKey.currentState!.validate())
+                            {print('okey')}
+                          else
+                            {print('error')}
+                        },
+                        child: Text(
+                          'Log in',
+                          style: GoogleFonts.josefinSans(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
